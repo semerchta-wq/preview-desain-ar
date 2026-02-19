@@ -1,27 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preview AR SEMERCHTA</title>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-</head>
-<body style="margin: 0; background-color: #f0f0f0;">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview AR SEMERCHTA</title>
 
-    <model-viewer 
-        src="produk.glb" 
-        ar 
-        ar-modes="webxr scene-viewer quick-look" 
-        camera-controls 
-        auto-rotate 
-        shadow-intensity="1"
-        style="width: 100%; height: 100vh;">
-        
-        <button slot="ar-button" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); padding: 12px 24px; background-color: #000; color: #fff; border: none; border-radius: 30px; font-family: sans-serif; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-            👋 LIHAT DI RUANGAN KAMU
-        </button>
-        
-    </model-viewer>
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #f0f0f0;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100dvh;
+    }
+
+    .ar-button {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 14px 28px;
+      background: black;
+      color: white;
+      border-radius: 50px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<model-viewer
+  src="produk.glb"
+  ar
+  ar-modes="scene-viewer webxr quick-look"
+  camera-controls
+  auto-rotate
+  shadow-intensity="1">
+
+  <button slot="ar-button" class="ar-button">
+    👋 LIHAT DI RUANGAN KAMU
+  </button>
+
+</model-viewer>
 
 </body>
 </html>
